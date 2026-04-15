@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Full Entry In-Text Citation</title>
+    <id>http://www.zotero.org/styles/full-entry-in-text</id>
+    <link href="http://www.zotero.org/styles/full-entry-in-text" rel="self"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="generic-base"/>
+  </info>
+  <macro name="citation">
+    <text variable="citation"/>
+  </macro>
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". "/>
+    </names>
+  </macro>
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="full">
+    <group delimiter=" ">
+      <text macro="author"/>
+      <text macro="issued" prefix="(" suffix=")"/>
+      <text variable="title" font-style="italic"/>
+      <text variable="container-title" prefix="In: " font-style="italic"/>
+      <text variable="publisher"/>
+      <text variable="URL"/>
+    </group>
+  </macro>
+  <citation>
+    <layout prefix="" suffix="" delimiter="; ">
+      <text macro="full"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout prefix="" suffix="" delimiter="; ">
+      <text macro="full"/>
+    </layout>
+  </bibliography>
+</style>
